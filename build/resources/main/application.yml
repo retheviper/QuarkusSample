@@ -1,6 +1,0 @@
-greeting:
-  message: "hello"
-
-quarkus:
-  log:
-    level: INFO
