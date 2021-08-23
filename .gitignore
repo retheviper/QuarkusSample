@@ -183,4 +183,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# ETC
+tmp
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,kotlin,jboss,macos
