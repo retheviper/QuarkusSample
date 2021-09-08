@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-A simple sample of Rest API by Quarkus with Kotlin.
+A simple sample of Rest API by [Quarkus](https://quarkus.io/) with Kotlin.
 
 This is another implementation version of [Spring Boot Sample](https://github.com/retheviper/springbootsample).
 

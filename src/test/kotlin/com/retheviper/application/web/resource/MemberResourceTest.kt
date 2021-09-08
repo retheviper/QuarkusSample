@@ -26,7 +26,8 @@ class MemberResourceTest {
         }.let { mapper.writeValueAsString(it) }
 
         given()
-            .`when`().get()
+            .`when`()
+            .get()
             .then()
             .statusCode(HttpStatus.SC_OK)
             .body(`is`(expected))
