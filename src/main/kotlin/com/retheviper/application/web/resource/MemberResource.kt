@@ -15,7 +15,7 @@ class MemberResource {
     private lateinit var service: MemberService
 
     @GET
-    fun listMember(): List<MemberResponse> {
+    suspend fun listMember(): List<MemberResponse> {
         return service.listMember().map { MemberResponse.from(it) }
     }
 }

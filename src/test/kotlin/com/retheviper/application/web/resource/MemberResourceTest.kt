@@ -2,7 +2,6 @@ package com.retheviper.application.web.resource
 
 import com.retheviper.application.web.model.response.MemberResponse
 import io.quarkus.test.common.http.TestHTTPEndpoint
-import io.quarkus.test.junit.DisabledOnNativeImage
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.apache.http.HttpStatus
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test
 
 @QuarkusTest
 @TestHTTPEndpoint(MemberResource::class)
-@DisabledOnNativeImage
 class MemberResourceTest {
 
     @Test
