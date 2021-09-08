@@ -12,3 +12,25 @@ In Construction!
 
 - [Gradle](https://gradle.org) (Kotlin DSL)
 - [RESTEasy](https://resteasy.github.io/)
+
+## Build
+
+### Uber-jar (for JVM)
+
+1. Run below.
+
+```shell
+./gradlew quarkusBuild -Dquarkus.package.type=uber-jar
+```
+
+2. Jar file will be found in `/build`.
+
+### Native build
+
+1. Run below.
+
+```shell
+./gradlew build -Dquarkus.package.type=native
+```
+
+2. Executable file will be fount in `/build`.

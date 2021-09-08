@@ -1,4 +1,4 @@
-package com.retheviper.application.web.controller
+package com.retheviper.application.web.resource
 
 import com.retheviper.application.web.model.response.MemberResponse
 import com.retheviper.domain.service.MemberService
@@ -15,7 +15,6 @@ class MemberResource {
     private lateinit var service: MemberService
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     fun listMember(): List<MemberResponse> {
         return service.listMember().map { MemberResponse.from(it) }
     }

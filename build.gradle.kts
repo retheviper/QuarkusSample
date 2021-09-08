@@ -28,6 +28,7 @@ dependencies {
 
     // Test
     testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("io.rest-assured:rest-assured")
 }
 
 group = "com.retheviper.quarkussample"

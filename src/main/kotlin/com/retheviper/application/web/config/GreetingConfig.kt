@@ -1,4 +1,4 @@
-package com.retheviper.quarkussample
+package com.retheviper.application.web.config
 
 import io.smallrye.config.ConfigMapping
 import io.smallrye.config.WithName
@@ -9,5 +9,4 @@ interface GreetingConfig {
 
     @WithName("message")
     fun message(): String?
-
 }
