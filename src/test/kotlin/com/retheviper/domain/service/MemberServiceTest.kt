@@ -12,7 +12,7 @@ import javax.inject.Inject
 class MemberServiceTest {
 
     @Inject
-    private lateinit var service: MemberService
+    internal lateinit var service: MemberService
 
     @Test
     fun listMemberTest() {

@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType
 class MemberResource {
 
     @Inject
-    private lateinit var service: MemberService
+    internal lateinit var service: MemberService
 
     @GET
     suspend fun listMember(): List<MemberResponse> {

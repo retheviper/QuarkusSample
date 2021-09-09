@@ -11,7 +11,8 @@ In Construction!
 ## Includes
 
 - [Gradle](https://gradle.org) (Kotlin DSL)
-- [RESTEasy](https://resteasy.github.io/)
+- [RESTEasy](https://resteasy.github.io/) (Reactive-Jackson)
+- [REST Assured](https://rest-assured.io/)
 
 ## Build
 

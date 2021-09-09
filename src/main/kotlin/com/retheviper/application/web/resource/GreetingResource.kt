@@ -15,7 +15,7 @@ import kotlin.system.measureTimeMillis
 class GreetingResource {
 
     @Inject
-    private lateinit var config: GreetingConfig
+    internal lateinit var config: GreetingConfig
 
     @GET
     fun listMember(): String {

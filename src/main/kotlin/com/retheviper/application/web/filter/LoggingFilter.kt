@@ -10,7 +10,7 @@ import javax.ws.rs.container.ContainerResponseContext
 class LoggingFilter {
 
     @Inject
-    private lateinit var log: Logger
+    internal lateinit var log: Logger
 
     @ServerRequestFilter
     fun filterRequest(context: ContainerRequestContext) {
