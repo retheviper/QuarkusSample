@@ -3,14 +3,12 @@ package com.retheviper.application.web.filter
 import org.jboss.logging.Logger
 import org.jboss.resteasy.reactive.server.ServerRequestFilter
 import org.jboss.resteasy.reactive.server.ServerResponseFilter
+import javax.enterprise.context.ApplicationScoped
 import javax.inject.Inject
 import javax.ws.rs.container.ContainerRequestContext
 import javax.ws.rs.container.ContainerResponseContext
 
-class LoggingFilter {
-
-    @Inject
-    internal lateinit var log: Logger
+class LoggingFilter(private val log: Logger) {
 
     @ServerRequestFilter
     fun filterRequest(context: ContainerRequestContext) {

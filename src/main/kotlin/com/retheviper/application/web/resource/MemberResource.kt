@@ -2,17 +2,11 @@ package com.retheviper.application.web.resource
 
 import com.retheviper.application.web.model.response.MemberResponse
 import com.retheviper.domain.service.MemberService
-import javax.inject.Inject
 import javax.ws.rs.GET
 import javax.ws.rs.Path
-import javax.ws.rs.Produces
-import javax.ws.rs.core.MediaType
 
 @Path("/api/v1/web/members")
-class MemberResource {
-
-    @Inject
-    internal lateinit var service: MemberService
+class MemberResource(private val service: MemberService) {
 
     @GET
     suspend fun listMember(): List<MemberResponse> {

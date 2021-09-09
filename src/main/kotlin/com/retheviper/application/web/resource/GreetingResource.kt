@@ -12,13 +12,10 @@ import javax.ws.rs.core.MediaType
 import kotlin.system.measureTimeMillis
 
 @Path("/")
-class GreetingResource {
-
-    @Inject
-    internal lateinit var config: GreetingConfig
+class GreetingResource(private val config: GreetingConfig){
 
     @GET
-    fun listMember(): String {
+    suspend fun getGreetingMessage(): String {
         return config.message() ?: "hello there!"
     }
 }
