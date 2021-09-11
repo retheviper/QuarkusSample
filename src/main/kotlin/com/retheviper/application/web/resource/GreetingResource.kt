@@ -1,6 +1,7 @@
 package com.retheviper.application.web.resource
 
 import com.retheviper.application.config.GreetingConfig
+import com.retheviper.common.extension.toUni
 import io.smallrye.mutiny.Uni
 import javax.ws.rs.GET
 import javax.ws.rs.Path
@@ -10,6 +11,6 @@ class GreetingResource(private val config: GreetingConfig) {
 
     @GET
     fun getGreetingMessage(): Uni<String> {
-        return Uni.createFrom().item(config.message() ?: "hello there!")
+        return (config.message() ?: "hello there!").toUni()
     }
 }
