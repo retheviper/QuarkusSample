@@ -1,4 +1,4 @@
-package com.retheviper.application.web.filter
+package com.retheviper.application.filter
 
 import org.jboss.logging.Logger
 import org.jboss.resteasy.reactive.server.ServerRequestFilter

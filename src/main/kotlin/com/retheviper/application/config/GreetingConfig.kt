@@ -1,4 +1,4 @@
-package com.retheviper.application.web.config
+package com.retheviper.application.config
 
 import io.smallrye.config.ConfigMapping
 import io.smallrye.config.WithName
