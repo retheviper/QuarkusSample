@@ -1,38 +1,40 @@
 package com.retheviper.domain.service
 
 import com.retheviper.domain.dto.MemberDto
+import com.retheviper.infrastructure.entity.Member
+import com.retheviper.infrastructure.repository.MemberRepository
+import java.time.LocalDateTime
 import javax.enterprise.context.ApplicationScoped
-import kotlin.random.Random
 
 @ApplicationScoped
-class MemberService {
+class MemberService(private val repository: MemberRepository) {
 
     fun listMember(): List<MemberDto> {
-        return (0..10).map {
-            MemberDto(
-                id = it,
-                userId = "id$it",
-                name = "name$it",
-                password = "password$it"
-            )
-        }
+        return repository.list().map(MemberDto::from)
     }
 
     fun getMember(id: Int): MemberDto {
-        return MemberDto(
-            id = id,
-            userId = "id$id",
-            name = "name$id",
-            password = "password$id"
-        )
+        return repository.findById(id).let(MemberDto::from)
     }
 
     fun createMember(dto: MemberDto): MemberDto {
-        return MemberDto(
-            id = 12,
-            userId = dto.userId,
-            name = dto.name,
-            password = dto.password,
-        )
+        return repository.create(
+            Member(
+                id = 12,
+                userId = "id12",
+                name = "name12",
+                password = "password12",
+                createdBy = "System",
+                createdDate = LocalDateTime.now(),
+                lastModifiedBy = "System",
+                lastModifiedDate = LocalDateTime.now(),
+                accountNonExpired = true,
+                accountNonLocked = true,
+                credentialsNonExpired = true,
+                enabled = true,
+                deleted = false,
+                memberInformationId = null
+            )
+        ).let(MemberDto::from)
     }
 }

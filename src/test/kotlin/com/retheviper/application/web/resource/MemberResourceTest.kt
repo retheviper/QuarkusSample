@@ -54,14 +54,14 @@ class MemberResourceTest {
     fun createMemberTest() {
         val expected = MemberResponse(
             id = 12,
-            userId = "userId",
-            name = "userName"
+            userId = "id12",
+            name = "name12"
         )
 
         val request = MemberUpsertForm(
             userId = expected.userId,
             name = expected.name,
-            password = "1234"
+            password = "password12"
         )
 
         val actual = given()

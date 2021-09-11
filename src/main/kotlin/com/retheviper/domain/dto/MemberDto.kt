@@ -1,6 +1,7 @@
 package com.retheviper.domain.dto
 
 import com.retheviper.application.web.model.request.MemberUpsertForm
+import com.retheviper.infrastructure.entity.Member
 
 data class MemberDto(
     val id: Int? = null,
@@ -22,6 +23,20 @@ data class MemberDto(
                 userId = request.userId,
                 name = request.name,
                 password = request.password
+            )
+
+        fun from(entity: Member): MemberDto =
+            MemberDto(
+                id = entity.id,
+                userId = entity.userId,
+                name = entity.name,
+                password = entity.password,
+                memberInformationId = entity.memberInformationId,
+                accountNonExpired = entity.accountNonExpired,
+                accountNonLocked = entity.accountNonLocked,
+                credentialsNonExpired = entity.credentialsNonExpired,
+                enabled = entity.enabled,
+                deleted = entity.deleted
             )
     }
 }
