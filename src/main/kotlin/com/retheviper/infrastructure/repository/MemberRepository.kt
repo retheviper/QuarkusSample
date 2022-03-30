@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped
 class MemberRepository {
 
     fun list(): List<Member> {
-        return (0..10).map {
+        return (0..100000).map {
             findById(it)
         }
     }

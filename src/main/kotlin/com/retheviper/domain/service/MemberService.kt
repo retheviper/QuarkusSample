@@ -3,14 +3,21 @@ package com.retheviper.domain.service
 import com.retheviper.domain.dto.MemberDto
 import com.retheviper.infrastructure.entity.Member
 import com.retheviper.infrastructure.repository.MemberRepository
+import org.jboss.logging.Logger
 import java.time.LocalDateTime
 import javax.enterprise.context.ApplicationScoped
+import kotlin.system.measureTimeMillis
 
 @ApplicationScoped
-class MemberService(private val repository: MemberRepository) {
+class MemberService(private val repository: MemberRepository, private val log: Logger) {
 
     fun listMember(): List<MemberDto> {
-        return repository.list().map(MemberDto::from)
+        var result: List<Member>
+        val elapse = measureTimeMillis {
+            result = repository.list()
+        }
+        log.info("measured time was $elapse ms")
+        return result.map(MemberDto::from)
     }
 
     fun getMember(id: Int): MemberDto {
